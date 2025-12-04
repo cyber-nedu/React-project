@@ -6,7 +6,8 @@ import AboutPage from './components/AboutPage.jsx';
 import ContactPage from './components/ContactPage.jsx';
 import ServicePage from './components/ServicePage.jsx';
 import BlogPage from './components/BlogPage.jsx';
-import { Routes, Route } from 'react-router-dom';
+import NotfoundPage from './components/NotfoundPage.jsx';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />;
             <Route path="/service" element={<ServicePage />} />;
             <Route path="/contact" element={<ContactPage />} />;
-            <Route path='/blog' element={ <BlogPage />} />; 
+            <Route path='/blog' element={<BlogPage />} />; 
+            <Route path='*' element={<NotfoundPage />} />;
           </Routes>
         </main>
         <Footer />
