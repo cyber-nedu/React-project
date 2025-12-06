@@ -76,6 +76,8 @@ function HomePage() {
 
         <button onClick={handleCLick}>Score</button>
       </div>
+      n
+      <p>This is actually my first time to deploy a website</p>
     </>
   );
 }
