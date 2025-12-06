@@ -1,7 +1,11 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import './Service.css'
 
 function ServicePage() {
+
+  useEffect(() => {
+    document.title = 'Register - Service'
+  })
   
   const [count, setCount] = useState(0);
 

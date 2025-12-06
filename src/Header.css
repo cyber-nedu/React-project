@@ -20,19 +20,22 @@ nav{
   justify-content: space-between;
   padding: 0 40px;
   background: #000;
+  height: 60px; 
+  align-items: center; 
 }
 
-ul{
+.mobile-nav-menu{ 
   display: flex;
   list-style: none;
-  gap: 3rem;
+  gap: 3rem; 
   align-items: center;
+  padding-left: 0; 
 }
 
 .link{
   color: #a1a1a1;
-  align-items: center;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .link:hover{
@@ -42,4 +45,89 @@ ul{
 .link:active{
   color: white;
   font-weight: 500;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 20px; 
+    }
+
+    .mobile-nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%); 
+        width: 70%; 
+        max-width: 300px; 
+        height: 100%;
+        background-color: #111; 
+        flex-direction: column;
+        gap: 0; 
+        padding-top: 80px; 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease-in-out; 
+        z-index: 1000; 
+    }
+
+
+    .mobile-nav-menu.open {
+        transform: translateX(0); 
+    }
+    
+
+    .mobile-nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    }
+    
+    .mobile-nav-menu .link {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+        color: #a1a1a1; 
+        font-weight: 400;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    
+    .mobile-nav-menu .link:hover {
+        background-color: #222;
+        color: wheat; 
+    }
+    
+    .menu-toggle {
+        display: block; 
+        background: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001; 
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); 
+        z-index: 1; 
+    }
+}
+
+@media(min-width:769px){
+  .menu-toggle{
+    display: none;
+  }
+}
+
+@media(max-width:480px){
+  .mobile-nav-menu{
+    width: 100%; 
+    max-width: 100%; 
+  }
 }

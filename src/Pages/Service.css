@@ -5,16 +5,7 @@ body{
   box-sizing: border-box;
 }
 
-button{
-  padding: 20px 40px;
-  background: #050569;
-  color: white;
 
-  &:hover{
-    background: blue;
-    color: #cccccc;
-  }
-}
 
 .all-btn{
  display: flex;
