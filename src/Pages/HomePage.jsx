@@ -60,7 +60,7 @@ function HomePage() {
               <td>4</td>
               <td>Daniel</td>
               <td>27</td>
-              <td>{ count}</td>
+              <td>{count}</td>
               <td>Male</td>
             </tr>
 
@@ -78,6 +78,7 @@ function HomePage() {
       </div>
 
       <h1>Starting something new</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quod excepturi dignissimos accusantium quaerat distinctio ullam voluptate tempora sit saepe aspernatur mollitia nostrum sed id asperiores facilis ipsam, voluptatibus assumenda!</p>
     </>
   );
 }

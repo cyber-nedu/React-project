@@ -5,7 +5,6 @@ import './Header.css'
 
 function Header() {
 
-  // Initialize isOpen to false so the menu is initially closed on mobile
   const [isOpen, setIsOpen] = useState(false);
 
 
