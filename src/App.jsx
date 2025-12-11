@@ -1,11 +1,12 @@
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import './App.css';
-import HomePage from './components/HomePage.jsx';
-import AboutPage from './components/AboutPage.jsx';
-import ContactPage from './components/ContactPage.jsx';
-import ServicePage from './components/ServicePage.jsx';
-import BlogPage from './components/BlogPage.jsx';
+import HomePage from './Pages/HomePage.jsx';
+import AboutPage from './Pages/AboutPage.jsx';
+import ContactPage from './Pages/ContactPage.jsx';
+import ServicePage from './Pages/ServicePage.jsx';
+import BlogPage from './Pages/BlogPage.jsx';
+import NotfoundPage from './Pages/NotfoundPage.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />;
             <Route path="/service" element={<ServicePage />} />;
             <Route path="/contact" element={<ContactPage />} />;
-            <Route path='/blog' element={ <BlogPage />} />; 
+            <Route path='/blog' element={<BlogPage />} />; 
+            <Route path='*' element={<NotfoundPage />} />;
           </Routes>
         </main>
         <Footer />
@@ -30,3 +32,4 @@ function App() {
 }
 
 export default App
+
