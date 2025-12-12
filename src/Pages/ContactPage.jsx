@@ -9,7 +9,7 @@ function ContactPage() {
     <>
       <h1>This is the Contact page</h1>
 
-      <p>Welcome{alert('Welcome to react alert;')}</p>
+     
     </>
   );
 }

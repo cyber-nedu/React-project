@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import './Home.css'
 
 
@@ -6,79 +6,80 @@ function HomePage() {
 
   useEffect(() => {
     document.title = 'Register - Home'
-  })
+  }, []) // Added dependency array for proper effect usage
 
-  const [counter, setcount] = useState(0);
+  // State variables from previous context (kept for reference, though unused in the current content)
+  // const [counter, setcount] = useState(0); 
+  // const [count, setCount] = useState(0);
 
-  const [count, setCount] = useState(0);
-
-  const handleCLick = () => {
-    setCount(count + 1);
-  }
+  // const handleCLick = () => {
+  //   setCount(count + 1);
+  // }
 
   return (
     <>
-      <div className="home">
+      {/* NOTE: Assuming the Header and Footer components exist outside this file 
+        or will wrap this component. We are focusing only on the <main> content.
+      */}
+      <main>
+        <div className="container">
 
-        <table>
-          <thead>
-            <tr>
-              <th>S/N</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Score</th>
-              <th>Gender</th>
-            </tr>
-          </thead>
+          {/* 1. HERO SECTION: The main, attention-grabbing entrance */}
+          <section className="hero">
+            <div className="hero-text-content">
+              <h1 className="hero-title">
+                **The Future of Registration is Here.**
+              </h1>
+              <p className="hero-subtitle">
+                Streamline your onboarding, manage your applications, and unlock access to exclusive opportunities—all in one place.
+              </p>
+              <div className="hero-cta-group">
+                <button className="cta-button primary">Start Free Today</button>
+                <button className="cta-button secondary">Learn More</button>
+              </div>
+            </div>
+            {/* Placeholder for visual appeal */}
+            <div className="hero-image-placeholder">
+              <h1>Looking For A Web Developer</h1><br />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolore harum tempora reiciendis placeat ut voluptatum porro illum corporis, inventore obcaecati nam minima itaque maxime, perferendis voluptate. Corrupti, expedita eum.</p><br />
 
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Angela</td>
-              <td>37</td>
-              <td>{count}</td>
-              <td>Female</td>
-            </tr>
+              <button>Click to see profile</button>
+            </div>
+          </section>
 
-            <tr>
-              <td>2</td>
-              <td>Emma</td>
-              <td>41</td>
-              <td>{count}</td>
-              <td>Male</td>
-            </tr>
+          {/* 2. VALUE PROPOSITION/FEATURES SECTION: Details what the user gains */}
+          <section className="value-prop-section">
+            <h2 className="section-title">Designed for Simplicity, Built for Speed.</h2>
+            <div className="value-grid">
+              <div className="value-card">
+                <i className="value-icon">⚡</i>
+                <h3>Instant Access</h3>
+                <p>Cut through the clutter. Get registered and start utilizing our platform immediately.</p>
+              </div>
+              <div className="value-card">
+                <i className="value-icon">📱</i>
+                <h3>Seamless Experience</h3>
+                <p>Fully responsive and optimized for every device, from desktop to mobile.</p>
+              </div>
+              <div className="value-card">
+                <i className="value-icon">🔒</i>
+                <h3>Maximum Security</h3>
+                <p>Rest easy knowing your personal data is protected by certified, industry-leading encryption.</p>
+              </div>
+            </div>
+          </section>
 
-            <tr>
-              <td>3</td>
-              <td>Precious</td>
-              <td>31</td>
-              <td>{count}</td>
-              <td>Female</td>
-            </tr>
+          {/* 3. FINAL CALL-TO-ACTION SECTION: Converts visitors into users */}
+          <section className="final-cta-section">
+            <div className="cta-banner">
+              <h2 className="cta-banner-title">Join the New Wave of Digital Registration.</h2>
+              <p className="cta-banner-subtitle">Ready to experience effortless onboarding? It only takes a minute to sign up.</p>
+              <button className="cta-button primary large">Secure Your Account Now</button>
+            </div>
+          </section>
 
-            <tr>
-              <td>4</td>
-              <td>Daniel</td>
-              <td>27</td>
-              <td>{count}</td>
-              <td>Male</td>
-            </tr>
-
-            <tr>
-              <td>5</td>
-              <td>Faith</td>
-              <td>30</td>
-              <td>{count}</td>
-              <td>Female</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <button onClick={handleCLick}>Score</button>
-      </div>
-
-      <h1>Starting something new</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quod excepturi dignissimos accusantium quaerat distinctio ullam voluptate tempora sit saepe aspernatur mollitia nostrum sed id asperiores facilis ipsam, voluptatibus assumenda!</p>
+        </div>
+      </main>
     </>
   );
 }
