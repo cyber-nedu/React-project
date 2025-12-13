@@ -1,18 +1,285 @@
-body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- Global Reset & Base --- */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    background-color: #ffffff;
 }
 
-table,th,td{
-  border: 2px solid black;
-  border-collapse: collapse;
-  text-align: center;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-table{
-  width: 100%;
-  height: 30vh;
-  margin-top: 30px;
-  padding: 40px;
+/* --- General Typography & Sections --- */
+.section-title {
+    font-size: 2.5rem;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* ============================ */
+/* 1. HERO SECTION              */
+/* ============================ */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    min-height: 80vh;
+    background: #f0f8ff; /* Light, welcoming background */
+    border-radius: 12px;
+    margin-top: 20px;
+    padding: 0 30px;
+}
+
+.hero-text-content {
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #007bff; /* Highlight main title */
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image-placeholder {
+    width: 45%;
+    color: #2d3748;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+    height: 400px;
+    background-color: #e2e8f0; 
+    border-radius: 8px;
+
+    h1{
+      font-size: 3rem;
+    }
+
+    button{
+      padding: 12px 20px;
+      background: #0056b3;
+      color: white;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+
+      &:active{
+        background: #007bff;
+        transition: 0.5s;
+        color: #1a202c;
+      }
+    }
+}
+
+/* --- Call to Action Buttons --- */
+.cta-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+.cta-button.secondary:hover {
+    background-color: #e6f0ff;
+    transform: translateY(-2px);
+}
+
+.cta-button.large {
+    font-size: 1.25rem;
+    padding: 18px 40px;
+}
+
+
+/* ============================ */
+/* 2. VALUE PROPOSITION SECTION */
+/* ============================ */
+.value-prop-section {
+    padding: 100px 0 80px 0;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+    text-align: left;
+}
+
+.value-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: #718096;
+}
+
+
+/* ============================ */
+/* 3. FINAL CTA SECTION         */
+/* ============================ */
+.final-cta-section {
+    padding: 80px 0 100px 0;
+}
+
+.cta-banner {
+    background-color: #1a202c; /* Dark, bold background for contrast */
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.cta-banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cta-banner-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e2e8f0;
+}
+
+
+/* ============================ */
+/* 4. RESPONSIVENESS            */
+/* ============================ */
+
+/* Tablets and larger phones (max-width: 992px) */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: 60vh;
+        padding: 60px 0;
+    }
+
+    .hero-text-content {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-image-placeholder {
+        width: 100%;
+        height: 300px;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on tablet */
+    }
+    
+    .cta-banner-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .value-prop-section {
+        padding: 60px 0 40px 0;
+    }
+    
+    .cta-banner {
+        padding: 40px 20px;
+    }
+
+    .hero-image-placeholder{
+      h1{
+        font-size: 2rem;
+      }
+
+      p{
+        font-size: 14px;
+      }
+    }
 }

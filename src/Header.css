@@ -7,19 +7,25 @@ body{
 }
 
 .logo{
-  color: wheat;
+  h1{
+    color: green;
+  }
+
+  span{
+    color:#007bff;
+  }
 }
 
 .active{
   text-decoration: none;
-  color: wheat;
+  color: white;
 }
 
 nav{
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
-  background: #000;
+  background: #1a202c;
   height: 60px; 
   align-items: center; 
 }
@@ -64,7 +70,7 @@ nav{
         width: 70%; 
         max-width: 300px; 
         height: 100%;
-        background-color: #111; 
+        background-color: #1a202c; 
         flex-direction: column;
         gap: 0; 
         padding-top: 80px; 
