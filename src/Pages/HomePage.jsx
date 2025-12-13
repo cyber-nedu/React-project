@@ -31,7 +31,7 @@ function HomePage() {
                 **The Future of Registration is Here.**
               </h1>
               <p className="hero-subtitle">
-                Streamline your onboarding, manage your applications, and unlock access to exclusive opportunities—all in one place.
+                Streamline your onboarding, manage your applications, and unlock access to exclusive opportunities—all in one places.
               </p>
               <div className="hero-cta-group">
                 <button className="cta-button primary">Start Free Today</button>
@@ -41,7 +41,7 @@ function HomePage() {
             {/* Placeholder for visual appeal */}
             <div className="hero-image-placeholder">
               <h1>Looking For A Web Developer</h1><br />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolore harum tempora reiciendis placeat ut voluptatum porro illum corporis, inventore obcaecati nam minima itaque maxime, perferendis voluptate. Corrupti, expedita eum.</p><br />
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora repudiandae alias nam id nesciunt nisi minima ratione dolore. Deleniti maxime quas asperiores, perspiciatis a quaerat tempore mollitia reiciendis earum.</p><br />
 
               <button>Click to see profile</button>
             </div>

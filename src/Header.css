@@ -7,12 +7,18 @@ body{
 }
 
 .logo{
-  color: wheat;
+  h1{
+    color: green;
+  }
+
+  span{
+    color:#007bff;
+  }
 }
 
 .active{
   text-decoration: none;
-  color: wheat;
+  color: white;
 }
 
 nav{
