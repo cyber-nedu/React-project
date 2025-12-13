@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import './About.css'; 
 
 function AboutPage() {
@@ -60,7 +61,7 @@ function AboutPage() {
             <div className="story-image-placeholder">
               <h1>Wants To Know More About Us</h1><br />
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non sunt ratione ad possimus totam itaque veritatis aspernatur quibusdam maxime. Eius iure, tenetur sequi nesciunt explicabo labore itaque et aliquid eveniet.</p><br />
-              <button>Click to see profile</button>
+              <Link to="https://github.com/cyber-nedu"><button>Click to see profile</button></Link>
             </div>
             <div className="story-content">
               <h2 className="section-title left-align">Our Journey So Far</h2>

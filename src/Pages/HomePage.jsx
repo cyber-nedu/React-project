@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import './Home.css'
 
 
@@ -43,7 +44,7 @@ function HomePage() {
               <h1>Looking For A Web Developer</h1><br />
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora repudiandae alias nam id nesciunt nisi minima ratione dolore. Deleniti maxime quas asperiores, perspiciatis a quaerat tempore mollitia reiciendis earum.</p><br />
 
-              <button>Click to see profile</button>
+              <Link to="https://github.com/cyber-nedu"><button>Click to see profile</button></Link>
             </div>
           </section>
 
