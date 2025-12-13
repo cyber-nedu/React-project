@@ -65,7 +65,7 @@ function AboutPage() {
             </div>
             <div className="story-content">
               <h2 className="section-title left-align">Our Journey So Far</h2>
-              <p>Founded in 20XX by a small team frustrated with complex onboarding forms, **Platform Register** was born from a simple idea: registration should be effortless.</p>
+              <p>Founded in 2025 by a small team frustrated with complex onboarding forms,codelab was born from a simple idea: registration should be effortless.</p>
               <p>Since then, we have grown into a global solution, continually refining our algorithms and expanding our integration partnerships. We believe that technology should serve the user, not complicate their access.</p>
               <a href="#footer" className="cta-link">Meet Our Leadership</a>
             </div>

@@ -1,17 +1,272 @@
-body{
+/* Service.css */
+
+:root {
+  --primary-color: #007aff; /* Modern Blue */
+  --secondary-color: #f0f8ff; /* Light background */
+  --text-color: #333;
+  --bg-color: #fff;
+  --card-bg: #fff;
+  --border-radius: 12px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.service-container {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* --- 1. Hero Section --- */
+.hero-section {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 60px;
+}
+
+.hero-section h1 {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero-section .subtitle {
+  font-size: 1.3em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+/* --- 2. Main Services Grid --- */
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.services-grid {
+  padding: 40px 0;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 3em;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* --- 3. Detailed Feature Spotlight --- */
+.feature-spotlight {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 0;
+  margin-top: 40px;
+}
+
+.feature-content, .feature-image-placeholder {
+  flex: 1;
+}
+
+.feature-image-placeholder {
+  min-height: 300px;
+  background-color: #f0f8ff; /* Placeholder color */
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-style: italic;
+  color: #303030;
+  padding: 20px;
+
+  button{
+    padding: 12px 20px;
+    border-radius: 20px;
+    background: #005bb5;
+    border: none;
+    outline: none;
+    color: white;
+
+    &:active{
+      background: #007aff;
+    }
+  }
+
+  h1{
+    font-style: normal;
+  }
+}
+
+.feature-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.feature-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- 4. CTA Bar --- */
+.cta-bar {
+  background-color: var(--primary-color);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.cta-bar h3 {
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  box-sizing: border-box;
+  font-size: 1.8em;
 }
 
-
-
-.all-btn{
- display: flex;
- align-items: center;
- justify-content: space-between;
- justify-content: center;
- min-height: 100vh;
- flex-direction: row;
+.cta-bar p {
+  margin: 5px 0 0;
+  font-size: 1.1em;
+  opacity: 0.9;
 }
+
+.secondary-cta {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.secondary-cta:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- 5. Benefits/Why Choose Us List --- */
+.benefits-section {
+    padding-bottom: 60px;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.check-icon {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* --- 6. Footer --- */
+.service-footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.service-footer a {
+    color: #777;
+    text-decoration: none;
+}
+
+.service-footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+  .hero-section h1 {
+    font-size: 2.5em;
+  }
+  .feature-spotlight {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+  .feature-content {
+    order: 2;
+  }
+  .feature-image-placeholder {
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .cta-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-content {
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-width:480px){
+  .section-title{
+    font-size: 1.7rem;
+  }
+}
+

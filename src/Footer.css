@@ -2,18 +2,15 @@ Footer{
   background: #1a202c;
   color: white;
   text-align: center;
+  font-size: 14px;
+  color: grey;
+    padding: 40px 0;
 }
 
 .text{
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-
-  .text2{
-    display: flex;
-    gap: 1rem;
-  }
-
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 @media(max-width:600px){

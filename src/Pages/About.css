@@ -33,7 +33,7 @@ body {
 .about-hero-section {
     padding: 100px 0;
     text-align: center;
-    background-color: #f8f9fa; /* Light background for contrast */
+    background: #f0f8ff;
     margin-top: 20px;
     border-radius: 8px;
 }
