@@ -6,22 +6,11 @@ import './Home.css'
 function HomePage() {
 
   useEffect(() => {
-    document.title = 'Register - Home'
-  }, []) // Added dependency array for proper effect usage
-
-  // State variables from previous context (kept for reference, though unused in the current content)
-  // const [counter, setcount] = useState(0); 
-  // const [count, setCount] = useState(0);
-
-  // const handleCLick = () => {
-  //   setCount(count + 1);
-  // }
+    document.title = 'CodeLab - Home'
+  }, []) 
 
   return (
     <>
-      {/* NOTE: Assuming the Header and Footer components exist outside this file 
-        or will wrap this component. We are focusing only on the <main> content.
-      */}
       <main>
         <div className="container">
 

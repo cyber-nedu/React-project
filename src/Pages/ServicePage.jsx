@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function ServicePage() {
 
   useEffect(() => {
-    document.title = 'Register - Service'
+    document.title = 'CodeLab - Service'
   })
 
   // Data for the main service cards
