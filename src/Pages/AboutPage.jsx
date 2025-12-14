@@ -4,7 +4,7 @@ import './About.css';
 
 function AboutPage() {
   useEffect(() => {
-    document.title = 'Register - About'
+    document.title = 'CodeLab - About'
   }, []) 
 
   return (

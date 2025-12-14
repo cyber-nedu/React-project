@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 function ContactPage() {
     useEffect(() => {
-      document.title = 'Register - Contact'
+      document.title = ' CodeLab - Contact'
     })
 
   return (

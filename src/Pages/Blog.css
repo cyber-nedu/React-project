@@ -1,0 +1,326 @@
+/* BlogPage.css */
+
+/* --- General & Variables --- */
+:root {
+  --primary-color: #4f46e5; /* A bright, modern indigo */
+  --primary-hover: #4338ca; 
+  --text-dark: #1f2937;
+  --text-medium: #4b5563;
+  --bg-light: #f9fafb; /* Light gray background */
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+.blog-page-container {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* --- Header --- */
+.blog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.header-highlight {
+  color: var(--primary-color);
+}
+
+.header-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+/* --- Featured Article --- */
+.featured-article {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .featured-article {
+    flex-direction: row;
+  }
+}
+
+.featured-article-image-wrapper {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.featured-article-image {
+  width: 100%;
+  height: 18rem; /* Set a default height */
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+    .featured-article-image {
+        height: 100%; 
+    }
+}
+
+.featured-article-content {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-post-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.featured-meta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.featured-read-more {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.featured-read-more:hover {
+  color: var(--primary-hover);
+}
+.read-more-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+}
+
+
+/* --- Main Grid Layout (Content + Sidebar) --- */
+.main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .main-content-grid {
+    grid-template-columns: 2fr 1fr; /* Two columns for desktop: main content and sidebar */
+  }
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Post Card --- */
+.post-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.post-card:hover {
+  box-shadow: 0 13px 20px -5px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.post-card-image-wrapper {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  height: 12rem;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-card-image {
+    transform: scale(1.05);
+}
+
+.post-card-category {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* pill shape */
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.post-card-excerpt {
+  color: var(--text-medium);
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+}
+
+.post-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* --- Sidebar --- */
+.blog-sidebar {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-section {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.sidebar-search-input,
+.sidebar-newsletter-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.sidebar-newsletter-input {
+    margin-bottom: 0.5rem;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-list li {
+  margin-bottom: 0.5rem;
+}
+
+.category-link {
+  color: var(--text-medium);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+.category-link:hover {
+  color: var(--primary-color);
+}
+
+.category-count {
+  font-size: 0.75rem;
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  color: #6b7280;
+}
+
+.sidebar-subscribe-button,
+.load-more-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.load-more-button {
+    width: auto;
+    display: inline-block;
+}
+
+.sidebar-subscribe-button:hover,
+.load-more-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.pagination-area {
+    text-align: center;
+    margin-top: 2rem;
+}
