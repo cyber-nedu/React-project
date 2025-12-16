@@ -35,14 +35,8 @@ const posts = [
 // Helper components
 const PostCard = ({ post }) => (
   <div className="post-card">
-    <div className="post-card-image-wrapper">
-      <img
-        src={post.image}
-        alt={post.title}
-        className="post-card-image"
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/400x200?text=CodeLab+Image" }}
-      />
-    </div>
+      <img className="card-img" src="/images/card.jpg" alt="" /><br />
+    
     <span className="post-card-category">
       {post.category}
     </span>
@@ -53,7 +47,7 @@ const PostCard = ({ post }) => (
       {post.excerpt}
     </p>
     <div className="post-card-meta">
-      <span>By **{post.author}**</span>
+      <span>By {post.author}</span>
       <span>{post.date}</span>
     </div>
   </div>
@@ -74,7 +68,7 @@ const Sidebar = () => (
     <div className="sidebar-section categories-section">
       <h4 className="sidebar-title">Categories</h4>
       <ul className="categories-list">
-        {['Frontend', 'Backend', 'DevOps', 'Cloud', 'AI/ML', 'Future Tech'].map(cat => (
+        {['Frontend', 'Backend', 'DevOps', 'Cloud', 'AI/ML', 'Future Tech', 'Website'].map(cat => (
           <li key={cat}>
             <a href={`/blog/category/${cat.toLowerCase()}`} className="category-link">
               {cat}
@@ -131,7 +125,8 @@ function BlogPage() {
           <div className="featured-article">
             <div className="featured-article-image-wrapper">
               <h1>Relevance Optimization</h1>
-              <small>{ blogWord.title}</small>
+              <small>{blogWord.title}</small>
+              <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis similique debitis aspernatur error aliquid? Blanditiis quasi dolore modi, nemo ex ipsam labore voluptatum incidunt et. Fugit ducimus harum expedita animi, delectus vero at aperiam iste commodi magni? Eveniet eligendi fuga facere doloribus, provident repudiandae sequi temporibus laboriosam asperiores neque. Quibusdam.</small>
             </div>
             <div className="featured-article-content">
               <span className="featured-meta">
@@ -165,7 +160,7 @@ function BlogPage() {
                 <PostCard key={post.id} post={post} />
               ))}
   
-              <PostCard post={{ id: 4, title: "Next.js 14 Server Components Deep Dive", excerpt: "Exploring the new paradigm shift in rendering and data fetching with React.", author: "Ella P.", date: "Nov 20, 2025", category: "Frameworks", image: "https://images.unsplash.com/photo-1621839659424-69b7e71c991b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTkyMzF8MHwxfGFsbHx8fHx8fHx8fDE2NzUwNzE5NTI&ixlib=rb-4.0.3&q=80&w=400" }} />
+              <PostCard post={{ id: 4, title: "Next.js 14 Server Components Deep Dive", excerpt: "Exploring the new paradigm shift in rendering and data fetching with React.", author: "Ella P.", date: "Nov 20, 2025", category: "Frameworks" }} />
               <PostCard post={{ id: 5, title: "CI/CD Pipeline with GitHub Actions", excerpt: "Automate your deployments and testing with this powerful integrated tool.", author: "Chen W.", date: "Nov 15, 2025", category: "DevOps", image: "https://images.unsplash.com/photo-1510915364890-a7d4a2592780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTkyMzF8MHwxfGFsbHx8fHx8fHx8fDE2NzUwNzE5NTI&ixlib=rb-4.0.3&q=80&w=400" }} />
             </div>
 

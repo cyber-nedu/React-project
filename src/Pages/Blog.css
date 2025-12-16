@@ -1,12 +1,9 @@
-/* BlogPage.css */
-
-/* --- General & Variables --- */
 :root {
-  --primary-color: #4f46e5; /* A bright, modern indigo */
+  --primary-color: #4f46e5; 
   --primary-hover: #4338ca; 
   --text-dark: #1f2937;
   --text-medium: #4b5563;
-  --bg-light: #f9fafb; /* Light gray background */
+  --bg-light: #f9fafb; 
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
 }
 
@@ -17,7 +14,7 @@
 }
 
 .main-content-wrapper {
-  max-width: 1200px;
+  max-width: 2200px;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
@@ -56,6 +53,10 @@
   padding-bottom: 0.25rem;
 }
 
+.card-img{
+  width: 200px;
+}
+
 /* --- Featured Article --- */
 .featured-article {
   background-color: white;
@@ -74,7 +75,7 @@
 
 .featured-article-image-wrapper {
   flex: 1;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
 .featured-article-image {
@@ -157,7 +158,6 @@
 
 /* --- Post Card --- */
 .post-card {
-  background-color: white;
   padding: 1.5rem;
   border-radius: 0.75rem;
   box-shadow: var(--card-shadow);
@@ -168,13 +168,6 @@
 .post-card:hover {
   box-shadow: 0 13px 20px -5px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
-}
-
-.post-card-image-wrapper {
-  overflow: hidden;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  height: 12rem;
 }
 
 .post-card-image {
@@ -195,7 +188,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
-  border-radius: 9999px; /* pill shape */
+  border-radius: 50px; 
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
