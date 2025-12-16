@@ -1,8 +1,12 @@
+import './Notfound.css'
+
 function NotfoundPage() {
   return (
     <>
-      <h1>404</h1>
-      <p>Page not found go back home</p>
+      <div className="container">
+        <h1>404</h1>
+        <p>The page you are looking for is not found</p>
+      </div>
     </>
   );
 }

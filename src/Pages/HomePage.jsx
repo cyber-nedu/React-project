@@ -1,76 +1,124 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './Home.css'
-
+import './Home.css';
 
 function HomePage() {
-
   useEffect(() => {
-    document.title = 'CodeLab - Home'
-  }, []) 
+    document.title = 'CodeLab - Home';
+  }, []);
+
+  const [activeFeature, setActiveFeature] = useState(null);
 
   return (
-    <>
-      <main>
-        <div className="container">
+    <div className="homepage-container">
 
-          {/* 1. HERO SECTION: The main, attention-grabbing entrance */}
-          <section className="hero">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                **The Future of Registration is Here.**
-              </h1>
-              <p className="hero-subtitle">
-                Streamline your onboarding, manage your applications, and unlock access to exclusive opportunities—all in one places.
-              </p>
-              <div className="hero-cta-group">
-                <button className="cta-button primary">Start Free Today</button>
-                <button className="cta-button secondary">Learn More</button>
-              </div>
-            </div>
-            {/* Placeholder for visual appeal */}
-            <div className="hero-image-placeholder">
-              <h1>Looking For A Web Developer</h1><br />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora repudiandae alias nam id nesciunt nisi minima ratione dolore. Deleniti maxime quas asperiores, perspiciatis a quaerat tempore mollitia reiciendis earum.</p><br />
-
-              <Link to="https://github.com/cyber-nedu"><button>Click to see profile</button></Link>
-            </div>
-          </section>
-
-          {/* 2. VALUE PROPOSITION/FEATURES SECTION: Details what the user gains */}
-          <section className="value-prop-section">
-            <h2 className="section-title">Designed for Simplicity, Built for Speed.</h2>
-            <div className="value-grid">
-              <div className="value-card">
-                <i className="value-icon">⚡</i>
-                <h3>Instant Access</h3>
-                <p>Cut through the clutter. Get registered and start utilizing our platform immediately.</p>
-              </div>
-              <div className="value-card">
-                <i className="value-icon">📱</i>
-                <h3>Seamless Experience</h3>
-                <p>Fully responsive and optimized for every device, from desktop to mobile.</p>
-              </div>
-              <div className="value-card">
-                <i className="value-icon">🔒</i>
-                <h3>Maximum Security</h3>
-                <p>Rest easy knowing your personal data is protected by certified, industry-leading encryption.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* 3. FINAL CALL-TO-ACTION SECTION: Converts visitors into users */}
-          <section className="final-cta-section">
-            <div className="cta-banner">
-              <h2 className="cta-banner-title">Join the New Wave of Digital Registration.</h2>
-              <p className="cta-banner-subtitle">Ready to experience effortless onboarding? It only takes a minute to sign up.</p>
-              <button className="cta-button primary large">Secure Your Account Now</button>
-            </div>
-          </section>
-
+      {/* Section 1: Hero Section - Clean & Static */}
+      <section className="hero-section-home">
+        <div className="hero-content">
+          <h1 className="animated-fade-in-slow">
+            Innovate. Code. Create.
+          </h1>
+          <p className="hero-subtitle animated-fade-in-slow-alt">
+            Unlock your potential with CodeLab – where ideas transform into reality.
+          </p>
+          <div className="hero-buttons">
+            <Link to="/contact" className="btn btn-primary animated-pop-in">
+              Start Your Project <i className="fas fa-arrow-right"></i>
+            </Link>
+            <Link to="/about" className="btn btn-secondary animated-pop-in-alt">
+              Learn More <i className="fas fa-info-circle"></i>
+            </Link>
+          </div>
         </div>
-      </main>
-    </>
+        {/* Visual element placeholder for a static, professional image/graphic */}
+        <div className="hero-visual-static">
+          <i className="fas fa-desktop hero-icon-large"></i>
+        </div>
+      </section>
+
+      {/* Section 2: Features/Services Section */}
+      <section className="features-section">
+        <h2>What We Offer</h2>
+        <p className="section-description">
+          Powerful solutions for modern challenges.
+        </p>
+        <div className="features-grid">
+          {/* Feature Card 1 */}
+          <div
+            className={`feature-card ${activeFeature === 'development' ? 'active' : ''}`}
+            onMouseEnter={() => setActiveFeature('development')}
+            onMouseLeave={() => setActiveFeature(null)}
+          >
+            <i className="fas fa-laptop-code feature-icon"></i>
+            <h3>Web & App Development</h3>
+            <p>Crafting bespoke digital experiences from concept to launch.</p>
+            <Link to="/services/web-dev" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+          </div>
+
+          {/* Feature Card 2 */}
+          <div
+            className={`feature-card ${activeFeature === 'design' ? 'active' : ''}`}
+            onMouseEnter={() => setActiveFeature('design')}
+            onMouseLeave={() => setActiveFeature(null)}
+          >
+            <i className="fas fa-palette feature-icon"></i>
+            <h3>UI/UX Design</h3>
+            <p>Intuitive and beautiful interfaces that engage users.</p>
+            <Link to="/services/design" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+          </div>
+
+          {/* Feature Card 3 */}
+          <div
+            className={`feature-card ${activeFeature === 'consulting' ? 'active' : ''}`}
+            onMouseEnter={() => setActiveFeature('consulting')}
+            onMouseLeave={() => setActiveFeature(null)}
+          >
+            <i className="fas fa-lightbulb feature-icon"></i>
+            <h3>Tech Consulting</h3>
+            <p>Strategic guidance to navigate the complex tech landscape.</p>
+            <Link to="/services/consulting" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+          </div>
+
+          {/* Feature Card 4 */}
+          <div
+            className={`feature-card ${activeFeature === 'support' ? 'active' : ''}`}
+            onMouseEnter={() => setActiveFeature('support')}
+            onMouseLeave={() => setActiveFeature(null)}
+          >
+            <i className="fas fa-headset feature-icon"></i>
+            <h3>Ongoing Support</h3>
+            <p>Reliable maintenance and support to keep your systems running smoothly.</p>
+            <Link to="/services/support" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Testimonials Section - Parallax/Fixed Background Kept */}
+      <section className="testimonials-section">
+        <div className="parallax-bg"></div>
+        <div className="testimonials-overlay">
+          <h2>What Our Clients Say</h2>
+          <div className="testimonial-card animated-zoom-in">
+            <i className="fas fa-quote-left quote-icon"></i>
+            <p>"CodeLab transformed our vision into a stunning, high-performing application. Their team is incredibly talented and a pleasure to work with!"</p>
+            <div className="client-info">
+              <span className="client-name">Ernest Daniel .C. </span>, CEO of CodeLab
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Call to Action */}
+      <section className="cta-section">
+        <div className="cta-content">
+          <h2>Ready to Build Your Next Big Thing?</h2>
+          <p>Let's collaborate and bring your innovative ideas to life. Contact us today for a free consultation!</p>
+          <Link to="/contact" className="btn btn-cta animated-cta-pulse">
+            <i className="fas fa-comments"></i> Get Started Now
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }
 

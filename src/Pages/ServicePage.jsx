@@ -35,7 +35,7 @@ function ServicePage() {
   // Data for the 'Why Choose Us' section
   const featuresData = [
     'Zero Setup Required: Start coding in seconds.',
-    'Multi-Language Support: From Python to TypeScript.',
+    'Multi-Language Support: From Javascript to Python.',
     'Version Control Integration: Seamless Git workflow.',
     'Private Project Hosting: Securely store your work.',
     'Dedicated Support: 24/7 technical assistance.',

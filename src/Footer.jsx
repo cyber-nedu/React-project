@@ -7,14 +7,14 @@ function Footer() {
     <>
       <footer>
        
-          <div className="text1">
-            <p>&copy; {currentYear}© 2025 CodeLab Inc. All rights reserved. </p>
-          </div>
         <div className="text">
           <p>Privacy |</p>
           <p>Terms |</p>
           <p>Support</p>
-        </div>
+        </div><br />
+          <div className="text1">
+            <p>&copy; {currentYear} CodeLab Inc. All rights reserved. </p>
+          </div>
       </footer>
       
     </>

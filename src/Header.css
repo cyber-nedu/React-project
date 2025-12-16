@@ -137,3 +137,10 @@ nav{
     max-width: 100%; 
   }
 }
+
+@media(min-width:2000px){
+  nav{
+    height: 10vh;
+    font-size: 1.6rem;
+  }
+}
