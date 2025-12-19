@@ -85,7 +85,7 @@
 
 /* --- Buttons --- */
 .btn {
-    display: inline-flex;
+    /* display: inline-flex; */
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
@@ -99,7 +99,6 @@
 }
 
 .btn-primary {
-    /* background-color: var(--primary-color); */
     color:black ;
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
@@ -187,7 +186,7 @@
 .hero-visual-static {
     width: 450px;
     height: 450px;
-    background: rgba(255, 255, 255, 0.05); /* Very subtle background */
+    background-image:url(/images/coding.jpg) ;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -195,6 +194,13 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     opacity: 0;
     animation: fadeIn 1.5s ease-out forwards;
+    margin-top: 60px;
+}
+
+@media(max-width:1175px){
+    .hero-section-home{
+        flex-direction: column;
+    }
 }
 
 .hero-icon-large {
@@ -210,6 +216,12 @@
     100% { transform: scale(1); opacity: 0.8; }
 }
 
+
+@media(max-width:370px){
+    .hero-buttons{
+
+    }
+}
 
 /* --- Section 2: Features/Services Section --- */
 .features-section {
