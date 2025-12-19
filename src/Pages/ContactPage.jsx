@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import './Contact.css'; 
+import { Icon } from "@iconify/react";
 
 function ContactPage() {
   
@@ -79,9 +81,18 @@ function ContactPage() {
 
           {/* Social Media Links */}
           <div className="social-links">
-            <a href="#" className="social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+
+            <Link to='https://github.com/cyber-nedu' target="blank"><Icon className="social-icon" icon="mdi:github" /></Link>
+
+            <Link to='https://web.facebook.com/profile.php?id=61573720972880' target="blank"><Icon className="social-icon" icon="mdi:facebook" /></Link>
+
+            <Link to='https://www.youtube.com/@edu_ernest' target="blank"><Icon className="social-icon" icon="mdi:youtube" /></Link>
+
+            
+
+            {/* <a href="#" className="social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
             <a href="#" className="social-icon" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="social-icon" aria-label="GitHub"><i className="fab fa-github"></i></a>
+            <a href="#" className="social-icon" aria-label="GitHub"><i className="fab fa-github"></i></a> */}
           </div>
         </aside>
 
@@ -97,7 +108,7 @@ function ContactPage() {
             scrolling="no"
             marginHeight="0"
             marginWidth="0"
-            src="https://www.google.com/maps/embed?pb=..." // Use a valid Google Maps Embed URL here
+            src="https://www.google.com/maps/embed?pb=..." 
             title="CodeLab Location"
           >
           </iframe>        
