@@ -1,21 +1,20 @@
 import { useEffect } from "react";
-import './Contact.css'; // Make sure this path is correct
+import './Contact.css'; 
 
 function ContactPage() {
-  // Sets the document title when the component mounts
+  
   useEffect(() => {
     document.title = 'CodeLab - Contact';
-  }, []); // Empty dependency array means this runs only once after the initial render
+  }, []); 
 
   return (
     <div className="contact-container">
-      {/* Animated Header Section */}
+
       <header className="contact-header">
         <h1>Get In Touch With CodeLab</h1>
         <p>We'd love to hear from you. Drop us a line, and let's build something amazing together!</p>
       </header>
 
-      {/* Main Content Area */}
       <main className="contact-content">
 
         {/* 1. Contact Form Section */}
@@ -69,7 +68,7 @@ function ContactPage() {
               <p>09129449905</p>
             </div>
           </div>
-
+``
           <div className="info-card">
             <i className="fas fa-envelope icon-animated"></i>
             <div>
