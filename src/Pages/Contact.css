@@ -202,7 +202,6 @@
     background-color: var(--primary-color);
     color: var(--text-light);
     border-radius: 50%;
-    transition: transform var(--transition-speed), background-color var(--transition-speed);
     font-size: 1.2em;
 }
 

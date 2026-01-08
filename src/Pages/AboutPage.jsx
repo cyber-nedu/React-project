@@ -1,14 +1,94 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // Added useState
 import { Link } from "react-router-dom";
-import './About.css'; 
+import './About.css';
+
+// Separate function for the Portal
+function RegisterPortal({ isOpen, onClose }) {
+
+  // 1. Add state to track inputs and errors
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  if (!isOpen) return null;
+
+  // 2. Function to handle the registration click
+  const handleRegister = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError("Passwords do not match!");
+      setSuccess("");
+      return;
+
+
+    } else {
+      setError(""); 
+      setSuccess("Successfully Registered!");
+
+      // Optional: Auto-close or clear message after delay
+      setTimeout(() => {
+        setSuccess("");
+      }, 2000);
+    }
+  };
+
+  return (
+    <div className="portal-overlay">
+      <div className="portal-card">
+        <h2>Create Your Account</h2>
+        <p>Enter your details to get started with CodeLab.</p>
+
+        <form className="portal-form" onSubmit={handleRegister}>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+
+          {/* 3. Bind value and onChange to Password */}
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          {/* 4. Bind value and onChange to Confirm Password */}
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+              if (error) setError("");
+            }}
+            required
+          />
+
+          {/* 5. Display messages */}
+          {error && <p className="error-message">{error} ❌</p>}
+          {success && <p className="success-message">{success} ✅</p>}
+
+          <div className="portal-btns">
+            <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
+            <button type="submit" className="register-submit-btn">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
 
 function AboutPage() {
+  const [showPortal, setShowPortal] = useState(false);
+
   useEffect(() => {
     document.title = 'CodeLab - About'
-  }, []) 
+  }, [])
 
   return (
     <>
+      <RegisterPortal isOpen={showPortal} onClose={() => setShowPortal(false)} />
+
       <main>
         <div className="container">
           <section className="about-hero-section">
@@ -20,7 +100,6 @@ function AboutPage() {
             </p>
           </section>
 
-          {/* 2. MISSION & VISION */}
           <section className="mission-vision-section">
             <div className="mission-card">
               <i className="card-icon">🎯</i>
@@ -34,7 +113,6 @@ function AboutPage() {
             </div>
           </section>
 
-          {/* 3. CORE VALUES */}
           <section className="values-section">
             <h2 className="section-title">The Principles That Guide Us</h2>
             <div className="values-grid">
@@ -56,7 +134,6 @@ function AboutPage() {
             </div>
           </section>
 
-          {/* 4. STORY / HISTORY */}
           <section className="story-section">
             <div className="story-image-placeholder">
               <h1>Wants To Know More About Us</h1><br />
@@ -65,19 +142,19 @@ function AboutPage() {
             </div>
             <div className="story-content">
               <h2 className="section-title left-align">Our Journey So Far</h2>
-              <p>Founded in 2025 by a small team frustrated with complex onboarding forms,codelab was born from a simple idea: registration should be effortless.</p>
-              <p>Since then, we have grown into a global solution, continually refining our algorithms and expanding our integration partnerships. We believe that technology should serve the user, not complicate their access.</p>
-              <a href="#footer" className="cta-link">Meet Our Leadership</a>
+              <p>Founded in 2025 by a small team frustrated with complex onboarding forms, codelab was born from a simple idea: registration should be effortless.</p>
+              <p>Since then, we have grown into a global solution, continually refining our algorithms and expanding our integration partnerships.</p>
+              <a href="" className="cta-link">Meet Our Leadership</a>
             </div>
           </section>
-
         </div>
 
-        {/* 5. FINAL CALL-TO-ACTION (Full Width) */}
         <section className="final-cta-about">
           <div className="container">
             <h2>Ready to experience the best registration platform?</h2>
-            <button className="cta-button primary">Register Now</button>
+            <button className="cta-button primary" onClick={() => setShowPortal(true)}>
+              Register Now
+            </button>
           </div>
         </section>
       </main>

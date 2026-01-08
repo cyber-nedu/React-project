@@ -53,9 +53,104 @@ body {
     line-height: 1.5;
 }
 
+
 /* ============================ */
-/* 2. MISSION & VISION          */
-/* ============================ */
+/* Portal Overlay */
+.portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:1;
+  backdrop-filter: blur(5px);
+}
+
+/* Portal Card */
+.portal-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.portal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.portal-form input {
+  padding: 12px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Buttons */
+.portal-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.cancel-btn {
+  flex: 1;
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background: #e0e0e0;
+  }
+}
+
+.register-submit-btn {
+  flex: 1;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.register-submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* Overlay section */
 .mission-vision-section {
     display: flex;
     gap: 40px;

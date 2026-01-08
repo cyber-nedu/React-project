@@ -40,7 +40,8 @@ function Header() {
             <Link to="/" className="link" onClick={closeMenu}>Home</Link>
           </li>
           <li>
-            <Link to="/about" className="link" onClick={closeMenu}>About</Link>
+            {/* <Link to="/about" className="link" onClick={closeMenu}>About</Link> */}
+            <a href="/about" className="link" onClick={closeMenu}>About</a>
           </li>
           <li>
             <Link to="/service" className="link" onClick={closeMenu}>Service</Link>

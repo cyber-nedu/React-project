@@ -13,7 +13,7 @@ function Footer() {
           <p>Support</p>
         </div><br />
           <div className="text1">
-            <p>&copy; {currentYear} CodeLab Inc. All rights reserved. </p>
+          <p>Copyright 2025 - {currentYear} &copy; CodeLab Inc. All rights reserved. </p>
           </div>
       </footer>
       
