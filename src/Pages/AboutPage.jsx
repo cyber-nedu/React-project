@@ -98,6 +98,10 @@ function AboutPage() {
             <p className="about-hero-subtitle">
               We are building the most seamless and secure registration platform, empowering thousands of users globally to connect and grow without friction.
             </p>
+
+            <button className="cta-button primary" onClick={() => setShowPortal(true)}>
+              Get Started
+            </button>
           </section>
 
           <section className="mission-vision-section">
