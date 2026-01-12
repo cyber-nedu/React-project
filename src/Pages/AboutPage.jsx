@@ -1,78 +1,115 @@
-import { useEffect, useState } from "react"; // Added useState
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './About.css';
 
-// Separate function for the Portal
-function RegisterPortal({ isOpen, onClose }) {
-
-  // 1. Add state to track inputs and errors
+function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [isRegistered, setIsRegistered] = useState(false);
 
   if (!isOpen) return null;
 
-  // 2. Function to handle the registration click
   const handleRegister = (e) => {
     e.preventDefault();
+
+    const emailExists = existingUsers.some(user => user.email.toLowerCase() === email.toLowerCase());
+    const nameExists = existingUsers.some(user => user.name.toLowerCase() === name.toLowerCase());
+
+    if (emailExists) {
+      setError("This email is already registered!");
+      return;
+    }
+
+    if (nameExists) {
+      setError("This name is already taken!");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
-      setSuccess("");
+      setTimeout(() => setError(""), 2000);
       return;
-
-
-    } else {
-      setError(""); 
-      setSuccess("Successfully Registered!");
-
-      // Optional: Auto-close or clear message after delay
-      setTimeout(() => {
-        setSuccess("");
-      }, 2000);
     }
+
+    setError("");
+    setIsRegistered(true);
+    onRegisterSuccess({ name, email });
+  };
+
+  const handleFinalClose = () => {
+    setIsRegistered(false);
+    setName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    onClose();
   };
 
   return (
     <div className="portal-overlay">
       <div className="portal-card">
-        <h2>Create Your Account</h2>
-        <p>Enter your details to get started with CodeLab.</p>
+        {!isRegistered ? (
+          <>
+            <h2>Create Your Account</h2>
+            <p>Enter your details to get started with CodeLab.</p>
 
-        <form className="portal-form" onSubmit={handleRegister}>
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
+            <form className="portal-form" onSubmit={handleRegister}>
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => { setName(e.target.value); if (error) setError(""); }}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); if (error) setError(""); }}
+                required
+              />
 
-          {/* 3. Bind value and onChange to Password */}
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
 
-          {/* 4. Bind value and onChange to Confirm Password */}
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
-              if (error) setError("");
-            }}
-            required
-          />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  if (error) setError("");
+                }}
+                required
+              />
 
-          {/* 5. Display messages */}
-          {error && <p className="error-message">{error} ❌</p>}
-          {success && <p className="success-message">{success} ✅</p>}
+              {error && <p className="error-message">{error} ❌</p>}
 
-          <div className="portal-btns">
-            <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
-            <button type="submit" className="register-submit-btn">Register</button>
+              <div className="portal-btns">
+                <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
+                <button type="submit" className="register-submit-btn" title="Click to register">Register</button>
+              </div>
+            </form>
+          </>
+        ) : (
+          <div className="success-modal-content">
+            <div className="success-icon-circle">✅</div>
+            <h2>Congrats, {name}!</h2>
+            <p>Email: {email}</p>
+            <p>You have successfully registered to <strong>CodeLab</strong>.</p>
+            <button className="cta-button primary" onClick={handleFinalClose}>
+              Continue to Dashboard
+            </button>
           </div>
-        </form>
+        )}
       </div>
     </div>
   );
@@ -80,6 +117,13 @@ function RegisterPortal({ isOpen, onClose }) {
 
 function AboutPage() {
   const [showPortal, setShowPortal] = useState(false);
+  const [registeredUsers, setRegisteredUsers] = useState([
+    { name: "Admin", email: "admin@codelab.com" } 
+  ]);
+
+  const addNewUser = (newUser) => {
+    setRegisteredUsers([...registeredUsers, newUser]);
+  };
 
   useEffect(() => {
     document.title = 'CodeLab - About'
@@ -87,7 +131,12 @@ function AboutPage() {
 
   return (
     <>
-      <RegisterPortal isOpen={showPortal} onClose={() => setShowPortal(false)} />
+      <RegisterPortal
+        isOpen={showPortal}
+        onClose={() => setShowPortal(false)}
+        existingUsers={registeredUsers}
+        onRegisterSuccess={addNewUser}
+      />
 
       <main>
         <div className="container">
@@ -142,7 +191,7 @@ function AboutPage() {
             <div className="story-image-placeholder">
               <h1>Wants To Know More About Us</h1><br />
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non sunt ratione ad possimus totam itaque veritatis aspernatur quibusdam maxime. Eius iure, tenetur sequi nesciunt explicabo labore itaque et aliquid eveniet.</p><br />
-              <Link to="https://github.com/cyber-nedu"><button>Click to see profile</button></Link>
+              <Link to="https://github.com/cyber-nedu" target="blank" className=""><button>Click to see profile</button></Link>
             </div>
             <div className="story-content">
               <h2 className="section-title left-align">Our Journey So Far</h2>

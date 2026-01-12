@@ -27,7 +27,7 @@ function Header() {
 
         <button className="menu-toggle" onClick={toggleMenu} aria-label={isOpen ? 'Close menu' : 'Open menu'}>
           <Icon
-            icon={isOpen ? 'ep:close' : 'mdi:menu'}
+            icon={isOpen ? 'mdi:close' : 'mdi:menu'}
             className="menu-icon"
             width="40"
             height="40"
@@ -40,8 +40,8 @@ function Header() {
             <Link to="/" className="link" onClick={closeMenu}>Home</Link>
           </li>
           <li>
-            {/* <Link to="/about" className="link" onClick={closeMenu}>About</Link> */}
-            <a href="/about" className="link" onClick={closeMenu}>About</a>
+            <Link to="/about" className="link" onClick={closeMenu}>About</Link>
+            
           </li>
           <li>
             <Link to="/service" className="link" onClick={closeMenu}>Service</Link>
