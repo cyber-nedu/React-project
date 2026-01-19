@@ -70,7 +70,7 @@ function ContactPage() {
               <p>09129449905</p>
             </div>
           </div>
-``
+          
           <div className="info-card">
             <i className="fas fa-envelope icon-animated"></i>
             <div>
@@ -87,12 +87,6 @@ function ContactPage() {
             <Link to='https://web.facebook.com/profile.php?id=61573720972880' target="blank"><Icon className="social-icon" icon="mdi:facebook" /></Link>
 
             <Link to='https://www.youtube.com/@edu_ernest' target="blank"><Icon className="social-icon" icon="mdi:youtube" /></Link>
-
-            
-
-            {/* <a href="#" className="social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" className="social-icon" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="social-icon" aria-label="GitHub"><i className="fab fa-github"></i></a> */}
           </div>
         </aside>
 
