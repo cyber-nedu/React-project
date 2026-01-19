@@ -59,7 +59,7 @@ function ContactPage() {
             <i className="fas fa-map-marker-alt icon-animated"></i>
             <div>
               <h3>Office Address</h3>
-              <p>Eneka, rumuchiorlu by chiyere maternity street.</p>
+              <p>Rumuchioulu by chiyere maternity, <br /> eneka port-harcourt.</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ function ContactPage() {
             <i className="fas fa-phone-alt icon-animated"></i>
             <div>
               <h3>Call Us</h3>
-              <p>09129449905</p>
+              <p>09129449905  OR 09165784543</p>
             </div>
           </div>
           

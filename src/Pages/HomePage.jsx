@@ -9,10 +9,10 @@ function HomePage() {
 
   const [activeFeature, setActiveFeature] = useState(null);
 
+    
   return (
     <div className="homepage-container">
 
-      {/* Section 1: Hero Section - Clean & Static */}
       <section className="hero-section-home">
         <div className="hero-content">
           <h1 className="animated-fade-in-slow">
@@ -26,24 +26,21 @@ function HomePage() {
               Start Your Project <i className="fas fa-arrow-right"></i>
             </Link>
             <Link to="/about" className="btn btn-secondary animated-pop-in-alt">
-              Learn More <i className="fas fa-info-circle"></i>
+              Get Started <i className="fas fa-info-circle"></i>
             </Link>
           </div>
         </div>
-        {/* Visual element placeholder for a static, professional image/graphic */}
         <div className="hero-visual-static">
           <i className="fas fa-desktop hero-icon-large"></i>
         </div>
       </section>
 
-      {/* Section 2: Features/Services Section */}
       <section className="features-section">
         <h2>What We Offer</h2>
         <p className="section-description">
           Powerful solutions for modern challenges.
         </p>
         <div className="features-grid">
-          {/* Feature Card 1 */}
           <div
             className={`feature-card ${activeFeature === 'development' ? 'active' : ''}`}
             onMouseEnter={() => setActiveFeature('development')}
@@ -55,7 +52,6 @@ function HomePage() {
             <Link to="/services/web-dev" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
           </div>
 
-          {/* Feature Card 2 */}
           <div
             className={`feature-card ${activeFeature === 'design' ? 'active' : ''}`}
             onMouseEnter={() => setActiveFeature('design')}
@@ -67,7 +63,6 @@ function HomePage() {
             <Link to="/services/design" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
           </div>
 
-          {/* Feature Card 3 */}
           <div
             className={`feature-card ${activeFeature === 'consulting' ? 'active' : ''}`}
             onMouseEnter={() => setActiveFeature('consulting')}
@@ -79,7 +74,6 @@ function HomePage() {
             <Link to="/services/consulting" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
           </div>
 
-          {/* Feature Card 4 */}
           <div
             className={`feature-card ${activeFeature === 'support' ? 'active' : ''}`}
             onMouseEnter={() => setActiveFeature('support')}
@@ -93,7 +87,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Section 3: Testimonials Section - Parallax/Fixed Background Kept */}
       <section className="testimonials-section">
         <div className="parallax-bg"></div>
         <div className="testimonials-overlay">
@@ -108,7 +101,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Section 4: Call to Action */}
       <section className="cta-section">
         <div className="cta-content">
           <h2>Ready to Build Your Next Big Thing?</h2>
@@ -119,6 +111,8 @@ function HomePage() {
         </div>
       </section>
     </div>
+
+    
   );
 }
 

@@ -83,6 +83,8 @@ body {
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
+  position: relative;
+  bottom: 30px;
 }
 
 .portal-form input {
@@ -110,19 +112,21 @@ body {
   margin-top: 5px;
 }
 
+.form-header {
+  position: relative;
+  bottom: 50px;
+}
+
 .cancel-btn {
-  flex: 1;
-  background: #f0f0f0;
   color: #333;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
+  position: relative;
+  left: 190px;
+  bottom: 10px;
   cursor: pointer;
   font-weight: bold;
-
-  &:hover {
-    background: #e0e0e0;
-  }
+  border: none;
+  background: transparent;
+  font-size: 40px;
 }
 
 .register-submit-btn {
@@ -140,7 +144,6 @@ body {
   opacity: 0.9;
 }
 
-/* Styling for the Congrats Modal View */
 .success-modal-content {
   text-align: center;
   padding: 30px 10px;
@@ -177,7 +180,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Overlay section */
 .mission-vision-section {
     display: flex;
     gap: 40px;
@@ -211,9 +213,6 @@ body {
     display: block;
 }
 
-/* ============================ */
-/* 3. CORE VALUES               */
-/* ============================ */
 .values-section {
     padding: 40px 0;
     background-color: #f8f9fa;
@@ -247,9 +246,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* ============================ */
-/* 4. STORY / HISTORY           */
-/* ============================ */
 .story-section {
     display: flex;
     gap: 60px;
@@ -314,11 +310,8 @@ body {
     border-color: #0056b3;
 }
 
-/* ============================ */
-/* 5. FINAL CTA                 */
-/* ============================ */
 .final-cta-about {
-    background-color: #2c3e50; /* Dark background */
+    background-color: #2c3e50; 
     color: white;
     padding: 60px 0;
     text-align: center;
@@ -330,7 +323,6 @@ body {
     font-weight: 600;
 }
 
-/* Reuse of Hero CTA styles for consistency */
 .cta-button {
     padding: 15px 30px;
     border: none;
@@ -344,16 +336,17 @@ body {
 .cta-button.primary {
     background-color: #007bff;
     color: white;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .cta-button.primary:hover {
     background-color: #0056b3;
 }
 
-
-/* ============================ */
-/* 6. RESPONSIVENESS            */
-/* ============================ */
 
 /* Tablet Adjustments */
 @media (max-width: 992px) {
@@ -374,8 +367,6 @@ body {
         margin-bottom: 30px;
     }
 }
-
-/* Mobile Adjustments */
 @media (max-width: 600px) {
     .about-hero-title {
         font-size: 2.2rem;

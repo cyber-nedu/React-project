@@ -8,7 +8,6 @@ function ServicePage() {
     document.title = 'CodeLab - Service'
   })
 
-  // Data for the main service cards
   const servicesData = [
     {
       icon: '🚀',
@@ -32,7 +31,6 @@ function ServicePage() {
     },
   ];
 
-  // Data for the 'Why Choose Us' section
   const featuresData = [
     'Zero Setup Required: Start coding in seconds.',
     'Multi-Language Support: From Javascript to Python.',
@@ -52,7 +50,6 @@ function ServicePage() {
         <button className="cta-button">Start Your Free Lab</button>
       </header>
 
-      {/* 2. Main Services Grid */}
       <section className="services-grid">
         <h2 className="section-title">Core Services & Capabilities</h2>
         <div className="cards-container">
@@ -66,7 +63,6 @@ function ServicePage() {
         </div>
       </section>
 
-      {/* 3. Detailed Feature Spotlight (Example: Collaboration) */}
       <section className="feature-spotlight">
         <div className="feature-content">
           <h2 className="section-title">Elevate Teamwork with Live Collaboration</h2>
@@ -85,7 +81,6 @@ function ServicePage() {
         </div>
       </section>
 
-      {/* 4. Pricing / Call-to-Action Bar */}
       <section className="cta-bar">
         <div className="cta-content">
           <h3>Ready to Revolutionize Your Workflow?</h3>
@@ -94,7 +89,6 @@ function ServicePage() {
         <button className="cta-button secondary-cta">View Pricing Plans</button>
       </section>
 
-      {/* 5. Benefits/Why Choose Us List */}
       <section className="benefits-section">
         <h2 className="section-title">Why Developers Choose Code Lab</h2>
         <div className="benefits-list">
