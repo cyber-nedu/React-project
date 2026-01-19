@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './About.css';
 
+
 function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,11 +21,14 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
 
     if (emailExists) {
       setError("This email is already registered!");
+
+      setTimeout(() => setError(""), 2000);
       return;
     }
 
     if (nameExists) {
       setError("This name is already taken!");
+      setTimeout(() => setError(""), 2000);
       return;
     }
 
@@ -53,8 +57,11 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
       <div className="portal-card">
         {!isRegistered ? (
           <>
-            <h2>Create Your Account</h2>
-            <p>Enter your details to get started with CodeLab.</p>
+            <button className="cancel-btn" type="button" onClick={onClose}>✖</button>
+            <div className="form-header">
+              <h2>Create Your Account</h2>
+              <p>Enter your details to get started with CodeLab.</p>
+            </div>
 
             <form className="portal-form" onSubmit={handleRegister}>
               <input
@@ -94,19 +101,19 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
               {error && <p className="error-message">{error} ❌</p>}
 
               <div className="portal-btns">
-                <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
                 <button type="submit" className="register-submit-btn" title="Click to register">Register</button>
               </div>
             </form>
           </>
-        ) : (
+        ) : 
+         (
           <div className="success-modal-content">
             <div className="success-icon-circle">✅</div>
             <h2>Congrats, {name}!</h2>
             <p>Email: {email}</p>
             <p>You have successfully registered to <strong>CodeLab</strong>.</p>
             <button className="cta-button primary" onClick={handleFinalClose}>
-              Continue to Dashboard
+                <Link to="/dashboard"> Continue to Dashboard</Link>
             </button>
           </div>
         )}
@@ -123,6 +130,7 @@ function AboutPage() {
 
   const addNewUser = (newUser) => {
     setRegisteredUsers([...registeredUsers, newUser]);
+
   };
 
   useEffect(() => {
@@ -205,9 +213,10 @@ function AboutPage() {
         <section className="final-cta-about">
           <div className="container">
             <h2>Ready to experience the best registration platform?</h2>
-            <button className="cta-button primary" onClick={() => setShowPortal(true)}>
-              Register Now
-            </button>
+            <p>Join thousands of users who have already simplified their registration process with CodeLab.
+
+            </p>
+
           </div>
         </section>
       </main>

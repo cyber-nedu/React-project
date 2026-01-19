@@ -22,7 +22,6 @@ function Header() {
       <nav>
         <div className="logo">
           <h1><Link to="/" className="active" onClick={closeMenu}>Code_<span>Lab</span></Link></h1>
-          {/* <Link to="/" className='active'><h1>Code_<span>Lab</span></h1></Link> */}
         </div>
 
         <button className="menu-toggle" onClick={toggleMenu} aria-label={isOpen ? 'Close menu' : 'Open menu'}>
