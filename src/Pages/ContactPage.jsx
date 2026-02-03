@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Contact.css'; 
-import { Icon } from "@iconify/react";
+import Icon from '@mdi/react';
+import { mdiSend, mdiPhone, mdiEmail, mdiGithub, mdiFacebook, mdiYoutube } from '@mdi/js'; 
+
+
 
 function ContactPage() {
   
@@ -19,10 +22,9 @@ function ContactPage() {
 
       <main className="contact-content">
 
-        {/* 1. Contact Form Section */}
         <section className="contact-form-section">
           <h2>Send Us A Message</h2>
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}> {/* Use onSubmit and preventDefault in React */}
+          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
 
             <div className="input-group">
               <label htmlFor="name">Your Name</label>
@@ -45,18 +47,15 @@ function ContactPage() {
             </div>
 
             <button type="submit" className="submit-btn">
-              {/* Assuming you have imported Font Awesome or another icon library */}
-              <i className="fas fa-paper-plane"></i> Send Message
+               <Icon className="submit-icon" path={mdiSend} size={1} /> Send Message
             </button>
           </form>
         </section>
 
-        {/* 2. Information Sidebar */}
         <aside className="contact-info-sidebar">
           <h2>Our Details</h2>
 
           <div className="info-card">
-            <i className="fas fa-map-marker-alt icon-animated"></i>
             <div>
               <h3>Office Address</h3>
               <p>Rumuchioulu by chiyere maternity, <br /> eneka port-harcourt.</p>
@@ -64,7 +63,7 @@ function ContactPage() {
           </div>
 
           <div className="info-card">
-            <i className="fas fa-phone-alt icon-animated"></i>
+            <Icon className="phone-icon" path={mdiPhone} size={1} />
             <div>
               <h3>Call Us</h3>
               <p>09129449905  OR 09165784543</p>
@@ -72,27 +71,25 @@ function ContactPage() {
           </div>
           
           <div className="info-card">
-            <i className="fas fa-envelope icon-animated"></i>
+                <Icon className="email-icon" path={mdiEmail} size={1} />
             <div>
               <h3>Email Us</h3>
               <p>chinedu.daniel.ernest@gmail.com</p>
             </div>
           </div>
 
-          {/* Social Media Links */}
           <div className="social-links">
 
-            <Link to='https://github.com/cyber-nedu' target="blank"><Icon className="social-icon" icon="mdi:github" /></Link>
+            <Link to='https://github.com/cyber-nedu' target="blank"><Icon className="social-icon" path={mdiGithub} size={1} /></Link>
 
-            <Link to='https://web.facebook.com/profile.php?id=61573720972880' target="blank"><Icon className="social-icon" icon="mdi:facebook" /></Link>
+            <Link to='https://web.facebook.com/profile.php?id=61573720972880' target="blank"><Icon className="social-icon" path={mdiFacebook} size={1} /></Link>
 
-            <Link to='https://www.youtube.com/@edu_ernest' target="blank"><Icon className="social-icon" icon="mdi:youtube" /></Link>
+            <Link to='https://www.youtube.com/@edu_ernest' target="blank"><Icon className="social-icon" path={mdiYoutube} size={1} /></Link>
           </div>
         </aside>
 
       </main>
 
-      {/* 3. Map/Location Placeholder */}
       <section className="location-map">
         <h2>Find Our Location</h2>
         <div className="map-placeholder">
@@ -113,6 +110,3 @@ function ContactPage() {
 }
 
 export default ContactPage;
-
-// Note: Ensure you link Font Awesome in your public/index.html or main entry file:
-// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
