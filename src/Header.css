@@ -28,6 +28,7 @@ nav{
   background: #1a202c;
   height: 60px; 
   align-items: center; 
+  border-bottom: 1px solid rgba(73, 100, 153, 0.651);
 }
 
 .mobile-nav-menu{ 
