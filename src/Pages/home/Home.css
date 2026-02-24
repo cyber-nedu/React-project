@@ -1,12 +1,11 @@
-/* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #6f42c1; /* Purple */
-    --accent-color: #28a745; /* Green */
+    --primary-color: #007bff; 
+    --secondary-color: #6f42c1;
+    --accent-color: #28a745; 
     --text-dark: #333;
     --text-light: #f8f9fa;
     --bg-light: #ffffff;
-    --bg-dark: #1a1a2e; /* Darker background */
+    --bg-dark: #1a1a2e; 
     --card-bg: #f8f9fa;
     --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
@@ -15,18 +14,16 @@
     --transition-speed: 0.4s;
 }
 
-/* Base style for the container */
 .homepage-container {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
-    overflow-x: hidden; /* Prevent horizontal scroll from any potential layout issues */
-    min-height: 100vh; /* Ensures it covers at least the viewport height */
+    overflow-x: hidden; 
+    min-height: 100vh; 
 }
 
-/* Headings and Base Typography */
 .homepage-container h1, .homepage-container h2, .homepage-container h3 {
     color: var(--text-dark);
     line-height: 1.2;
@@ -72,7 +69,6 @@
     color: var(--secondary-color);
 }
 
-/* --- Base Animations (Subtle) --- */
 @keyframes fadeIn {
     to { opacity: 1; }
 }
@@ -83,9 +79,161 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Buttons --- */
+
+
+/* ===== Form section */
+
+.portal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.portal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cancel-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.cancel-btn:hover {
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.form-header h2 {
+  font-size: 1.75rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.portal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.portal-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.portal-form input:focus {
+  border-color: #6366f1; 
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  background: #fef2f2;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.register-submit-btn {
+  background: #6366f1;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.register-submit-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.success-modal-content {
+  text-align: center;
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon-circle {
+  font-size: 3rem;
+  background: #dcfce7;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.cta-button.primary {
+  margin-top: 1.5rem;
+  background: #10b981;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.cta-button.primary a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* ====== Form section ends */
 .btn {
-    /* display: inline-flex; */
     align-items: center;
     gap: 10px;
     padding: 15px 30px;
@@ -103,7 +251,6 @@
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Button Hover Animation (Lift) */
 .btn-primary:hover {
     background-color: #0056b3;
     transform: translateY(-3px) scale(1.02);
@@ -125,11 +272,10 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Section 1: Hero Section (Cleaned) --- */
 .hero-section-home {
     background: linear-gradient(135deg, var(--bg-dark) 0%, #2e2e4a 100%);
     color: var(--text-light);
-    min-height: 85vh; /* A bit shorter than full screen for better flow */
+    min-height: 85vh; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -140,7 +286,6 @@
 .hero-content {
     max-width: 550px;
     z-index: 2;
-    /* Animation: Subtle Fade In for the whole block */
     opacity: 0;
     animation: fadeIn 1.5s ease-out forwards;
 }
@@ -151,7 +296,6 @@
     margin-bottom: 20px;
     color: var(--text-light);
     line-height: 1.1;
-    /* Simple delay for text */
     opacity: 0;
     animation: fadeIn 1s ease-out 0.5s forwards;
 }
@@ -160,7 +304,6 @@
     font-size: 1.4em;
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
-    /* Simple delay for subtitle */
     opacity: 0;
     animation: fadeIn 1s ease-out 1s forwards;
 }
@@ -170,7 +313,6 @@
     gap: 20px;
 }
 
-/* Button Fade-in/Pop-in */
 .animated-pop-in {
     opacity: 0;
     transform: translateY(20px);
@@ -217,13 +359,8 @@
 }
 
 
-@media(max-width:370px){
-    .hero-buttons{
 
-    }
-}
 
-/* --- Section 2: Features/Services Section --- */
 .features-section {
     padding: 100px 80px;
     background-color: var(--bg-light);
@@ -247,19 +384,16 @@
     border: 1px solid #e0e0e0;
     position: relative;
     overflow: hidden;
-    /* Initial animation for cards (Staggered Fade In/Slide Up) */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
-/* Staggered animation for cards */
 .features-grid div:nth-child(1) { animation-delay: 0.2s; }
 .features-grid div:nth-child(2) { animation-delay: 0.4s; }
 .features-grid div:nth-child(3) { animation-delay: 0.6s; }
 .features-grid div:nth-child(4) { animation-delay: 0.8s; }
 
-/* Card Hover Animation (Lift and Shadow) */
 .feature-card:hover, .feature-card.active {
     transform: translateY(-10px) scale(1.03);
     box-shadow: var(--hover-shadow);
@@ -273,7 +407,6 @@
     transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
-/* Icon Bounce Animation (Hover) */
 .feature-card:hover .feature-icon,
 .feature-card.active .feature-icon {
     color: var(--secondary-color);
@@ -304,19 +437,16 @@
     transition: transform var(--transition-speed);
 }
 
-/* Arrow Slide Animation (Hover) */
 .card-link:hover i {
     transform: translateX(5px);
 }
 
 
-/* --- Section 3: Testimonials Section --- */
 .testimonials-section {
     position: relative;
     padding: 120px 80px;
     color: var(--text-light);
     overflow: hidden;
-    /* Simple fixed background for parallax look */
     background-color: var(--bg-dark);
     background-attachment: fixed;
     background-position: center;
@@ -325,7 +455,6 @@
 }
 
 .parallax-bg {
-    /* Use this to apply the image and overlay effect */
     position: absolute;
     top: 0;
     left: 0;

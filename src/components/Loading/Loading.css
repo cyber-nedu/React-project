@@ -1,0 +1,29 @@
+.loader-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a0a0b; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #ffffff;
+}
+
+.content{
+  margin-bottom: 260px;
+}
+
+.loader-bottom-content {
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+}
+
+.software-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
