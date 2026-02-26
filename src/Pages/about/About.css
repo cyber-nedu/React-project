@@ -132,39 +132,13 @@ body {
     flex: 1;
 }
 
-.story-image-placeholder {
-    flex: 1;
-    min-height: 350px;
-    background-color: #eaf3fd;
+.developers {
+    width: 100%;
+    max-width: 500px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    color: #5f7188;
-    font-style: italic;
-    padding: 20px;
-    text-align: center;
-
-    h1{
-        color: #2c3e50;
-        font-style: normal;
-    }
-
-    p{
-        font-size: 14px;
-    }
-
-    button{
-      padding: 12px 20px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      background: #34495e;
-      color: white;
-      cursor: pointer;
-    }
+    animation: fadeIn 1s ease-in-out;
 }
+
 
 .story-content p {
     margin-bottom: 20px;
@@ -223,7 +197,6 @@ body {
 }
 
 
-/* Tablet Adjustments */
 @media (max-width: 992px) {
     .about-hero-title {
         font-size: 2.8rem;
@@ -234,7 +207,8 @@ body {
     }
 
     .story-section {
-        flex-direction: column-reverse; 
+        flex-direction: column;
+        text-align: center;
 
     }
     

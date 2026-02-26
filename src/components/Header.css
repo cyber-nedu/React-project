@@ -7,12 +7,8 @@ body{
 }
 
 .logo{
-  h1{
-    color: green;
-  }
-
   span{
-    color:#007bff;
+    color: #38bdf8;
   }
 }
 
@@ -46,13 +42,11 @@ nav{
 }
 
 .link:hover{
-  color:wheat ;
+  color:#38bdf8 ;
+  border-bottom: 3px solid #38bdf8;
+  font-weight: bold;
 }
 
-.link:active{
-  color: white;
-  font-weight: 500;
-}
 
 
 

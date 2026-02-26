@@ -1,0 +1,226 @@
+.dashboard-main.modern-user-page {
+  padding: 30px;
+  color: #fff;
+  animation: fadeUp 0.5s ease;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+}
+
+.page-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.primary-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.toolbar input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  width: 250px;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.mini-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: 0.35s ease;
+  position: relative;
+}
+
+.user-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  border: 2px solid #0f172a;
+}
+
+.role {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin: 6px 0 10px;
+}
+
+.role.admin {
+  background: #ef4444;
+}
+.role.user {
+  background: #3b82f6;
+}
+.role.moderator {
+  background: #f59e0b;
+}
+
+
+.role.manager {
+  background: #8b5cf6; 
+}
+
+.role.marketer {
+  background: #ec4899; 
+}
+
+.role.editor {
+  background: #14b8a6;
+}
+
+.role.viewer {
+  background: #0b575a; 
+}
+
+.role.guest {
+  background: #000000; 
+}
+
+.role.food-seller {
+  background: #f97316; 
+}
+
+.role.light-man {
+  background: #eab308; 
+  color: #111;
+}
+
+.role.administrator {
+  background: #dc2626; 
+}
+
+.role.accountant {
+  background: #025e11;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.ghost-btn {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ghost-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .toolbar {
+    position: relative;
+    left: 15px;
+  }
+
+  .quick-stats {
+    flex-wrap: wrap;
+  }
+
+  .user-grid {
+    position: relative;
+    left: 15px;
+  }
+}

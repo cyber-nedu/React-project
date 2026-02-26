@@ -18,10 +18,6 @@ function AboutPage() {
             <p className="about-hero-subtitle">
               We are building the most seamless and secure registration platform, empowering thousands of users globally to connect and grow without friction.
             </p>
-
-            <button className="cta-button primary" onClick={() => setShowPortal(true)}>
-              Get Started
-            </button>
           </section>
 
           <section className="mission-vision-section">
@@ -59,11 +55,7 @@ function AboutPage() {
           </section>
 
           <section className="story-section">
-            <div className="story-image-placeholder">
-              <h1>Wants To Know More About Us</h1><br />
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non sunt ratione ad possimus totam itaque veritatis aspernatur quibusdam maxime. Eius iure, tenetur sequi nesciunt explicabo labore itaque et aliquid eveniet.</p><br />
-              <Link to="https://github.com/cyber-nedu" target="blank" className=""><button>Click to see profile</button></Link>
-            </div>
+              <img className="developers" src="/images/developers-edit.png" alt="developers" />
             <div className="story-content">
               <h2 className="section-title left-align">Our Journey So Far</h2>
               <p>Founded in 2025 by a small team frustrated with complex onboarding forms, codelab was born from a simple idea: registration should be effortless.</p>

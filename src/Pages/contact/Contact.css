@@ -148,7 +148,10 @@
 .info-card {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 25px;
+    margin-bottom: 25px; 
+    p{
+        color: black;
+    }
 }
 
 .info-card i {

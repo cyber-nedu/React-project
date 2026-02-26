@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; 
 import Loading from './components/Loading/Loading.jsx';
 
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import './App.css';
 import HomePage from './Pages/home/HomePage.jsx';
 import AboutPage from './Pages/about/AboutPage.jsx';
@@ -10,7 +10,8 @@ import ContactPage from './Pages/contact/ContactPage.jsx';
 import ServicePage from './Pages/service/ServicePage.jsx';
 import BlogPage from './Pages/blog/BlogPage.jsx';
 import Dashboard from './Pages/dashboard/Dashboard.jsx';
-import Overview from './Pages/overview/Overview.jsx';
+import User from './Pages/user-management/Users.jsx';
+import Analytics from './Pages/analytics/Analytics.jsx';
 import NotfoundPage from './Pages/not-found/NotfoundPage.jsx';
 import { Routes, Route, Outlet } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ const PublicLayout = () => (
   <>
     <Header />
     <main>
-      <Outlet /> 
+      <Outlet />
     </main>
     <Footer />
   </>
@@ -49,8 +50,11 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
         </Route>
 
+        {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/overview" element={<Overview />} />
+        {/* <Route path="/dashboard/activity" element={<ActivityPage />} /> */}
+        <Route path="/dashboard/user" element={<User />} />
+        <Route path="/dashboard/analytics" element={<Analytics />} />
 
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
