@@ -20,7 +20,6 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
 
     if (emailExists) {
       setError("This email is already registered!");
-
       setTimeout(() => setError(""), 2000);
       return;
     }
@@ -36,6 +35,10 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
       setTimeout(() => setError(""), 2000);
       return;
     }
+
+    // --- ADDED LINE START ---
+    localStorage.setItem('userName', name);
+    // --- ADDED LINE END ---
 
     setError("");
     setIsRegistered(true);
@@ -121,7 +124,6 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
   );
 }
 
-
 function HomePage() {
   useEffect(() => {
     document.title = 'CodeLab - Home';
@@ -136,17 +138,14 @@ function HomePage() {
 
   const addNewUser = (newUser) => {
     setRegisteredUsers([...registeredUsers, newUser]);
-
   };
 
   useEffect(() => {
     document.title = 'CodeLab - About'
   }, [])
-  return (
 
-    
+  return (
     <>
-      
       <RegisterPortal
         isOpen={showPortal}
         onClose={() => setShowPortal(false)}
@@ -154,7 +153,6 @@ function HomePage() {
         onRegisterSuccess={addNewUser}
       />
       <div className="homepage-container">
-
         <section className="hero-section-home">
           <div className="hero-content">
             <h1 className="animated-fade-in-slow">
@@ -168,7 +166,7 @@ function HomePage() {
                 Start Your Project
               </Link>
               <Link onClick={() => setShowPortal(true)} className="btn btn-secondary animated-pop-in-alt">
-                Get Started 
+                Get Started
               </Link>
             </div>
           </div>
@@ -254,8 +252,6 @@ function HomePage() {
         </section>
       </div>
     </>
-
-    
   );
 }
 
