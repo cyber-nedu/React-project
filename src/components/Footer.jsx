@@ -1,5 +1,4 @@
 import './Footer.css';
-import { Github, Twitter, Linkedin } from 'lucide-react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,11 +11,6 @@ function Footer() {
           <p className="footer-tagline">
             Empowering developers to build the future, one line of code at a time.
           </p>
-          <div className="social-links-footer">
-            <a href="#"><Twitter size={20} /></a>
-            <a href="#"><Github size={20} /></a>
-            <a href="#"><Linkedin size={20} /></a>
-          </div>
         </div>
 
         <div className="footer-column">
