@@ -35,6 +35,17 @@
   border-radius: 50%;
 }
 
+.animation{
+  animation: ctaPulse 2s infinite ease-in-out;
+
+}
+
+@keyframes ctaPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -184,6 +195,6 @@
 
   .insights-grid{
     position: relative;
-    left: 15Phpx;
+    left: 15px;
   }
 }

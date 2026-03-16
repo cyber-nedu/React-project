@@ -4,7 +4,7 @@ import {
   LayoutDashboard, User, Settings, Activity,
   BarChart3, Camera, Menu, X, LayoutDashboardIcon, HomeIcon
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
   const [profileImage, setProfileImage] = useState(localStorage.getItem('userProfilePic') || null);
@@ -73,25 +73,39 @@ function Sidebar() {
           <h2>Dashboard</h2>
           <ul>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard/overview"><LayoutDashboard size={18} /> Overview</Link>
+              <NavLink to="/dashboard/overview" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <LayoutDashboard size={18} /> Overview
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard/profile"><User size={18} /> Profile</Link>
+              <NavLink to="/dashboard/profile" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <User size={18} /> Profile
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard/user"><Settings size={18} /> User Management</Link>
+              <NavLink to="/dashboard/user" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <Settings size={18} /> User Management
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard/activity"><Activity size={18} /> Activity</Link>
+              <NavLink to="/dashboard/activity" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <Activity size={18} /> Activity
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard/support"><BarChart3 size={18} /> User Analytics</Link>
+              <NavLink to="/dashboard/analytics " className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <BarChart3 size={18} /> User Analytics
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/dashboard"><LayoutDashboardIcon size={18} /> Dashboard</Link>
+              <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <LayoutDashboardIcon size={18} /> Dashboard
+              </NavLink>
             </li>
             <li onClick={() => setIsMobileMenuOpen(false)}>
-              <Link to="/"><HomeIcon size={18} /> Home</Link>
+              <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''} end>
+                <HomeIcon size={18} /> Home
+              </NavLink>
             </li>
           </ul>
         </div>

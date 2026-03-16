@@ -36,9 +36,7 @@ function RegisterPortal({ isOpen, onClose, existingUsers, onRegisterSuccess }) {
       return;
     }
 
-    // --- ADDED LINE START ---
     localStorage.setItem('userName', name);
-    // --- ADDED LINE END ---
 
     setError("");
     setIsRegistered(true);
@@ -162,16 +160,15 @@ function HomePage() {
               Unlock your potential with CodeLab – where ideas transform into reality.
             </p>
             <div className="hero-buttons">
-              <Link to="/contact" className="btn btn-primary animated-pop-in">
-                Start Your Project
+              <Link to="" className="btn btn-primary animated-pop-in">
+                Learn More
               </Link>
               <Link onClick={() => setShowPortal(true)} className="btn btn-secondary animated-pop-in-alt">
-                Get Started
+                Sign Up
               </Link>
             </div>
           </div>
           <div className="hero-visual-static">
-            <i className="fas fa-desktop hero-icon-large"></i>
           </div>
         </section>
 
@@ -186,10 +183,10 @@ function HomePage() {
               onMouseEnter={() => setActiveFeature('development')}
               onMouseLeave={() => setActiveFeature(null)}
             >
-              <i className="fas fa-laptop-code feature-icon"></i>
+              
               <h3>Web & App Development</h3>
               <p>Crafting bespoke digital experiences from concept to launch.</p>
-              <Link to="/services/web-dev" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+              <Link to="/services/web-dev" className="explore">Explore </Link>
             </div>
 
             <div
@@ -200,7 +197,7 @@ function HomePage() {
               <i className="fas fa-palette feature-icon"></i>
               <h3>UI/UX Design</h3>
               <p>Intuitive and beautiful interfaces that engage users.</p>
-              <Link to="/services/design" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+              <Link to="/services/design" className="explore">Explore </Link>
             </div>
 
             <div
@@ -208,10 +205,9 @@ function HomePage() {
               onMouseEnter={() => setActiveFeature('consulting')}
               onMouseLeave={() => setActiveFeature(null)}
             >
-              <i className="fas fa-lightbulb feature-icon"></i>
               <h3>Tech Consulting</h3>
               <p>Strategic guidance to navigate the complex tech landscape.</p>
-              <Link to="/services/consulting" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+              <Link to="/services/consulting" className="explore">Explore </Link>
             </div>
 
             <div
@@ -219,10 +215,9 @@ function HomePage() {
               onMouseEnter={() => setActiveFeature('support')}
               onMouseLeave={() => setActiveFeature(null)}
             >
-              <i className="fas fa-headset feature-icon"></i>
               <h3>Ongoing Support</h3>
               <p>Reliable maintenance and support to keep your systems running smoothly.</p>
-              <Link to="/services/support" className="card-link">Explore <i className="fas fa-chevron-right"></i></Link>
+              <Link to="/services/support" className="explore">Explore </Link>
             </div>
           </div>
         </section>

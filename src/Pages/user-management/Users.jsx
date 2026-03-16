@@ -30,9 +30,19 @@ const users = [
   { id: 18, name: "Ethan White", email: "ethan@gmail.com", role: "User", online: false },
   { id: 19, name: "Adam Benjamin", email: "adam@gmail.com", role: "Administrator", online: false },
   { id: 20, name: "Clark Kent", email: "clark@gmail.com", role: "User", online: false },
+  { id: 21, name: "Miracle Kiata", email: "miracle@gmail.com", role: "Light-man", online: true },
+  { id: 22, name: "James Isreal", email: "james@gmail.com", role: "Accountant", online: true },
+  { id: 23, name: "Geh Geh", email: "geh@gmail.com", role: "User", online: false },
+  { id: 24, name: "Amos Uche", email: "amos@gmail.com", role: "Accountant", online: false },
+  { id: 25, name: "Blessing Saviour", email: "blessing@gmail.com", role: "Admin", online: true },
+  { id: 26, name: "Julie Rose", email: "julierose@gmail.com", role: "Moderator", online: true },
+  { id: 27, name: "Peter Akaliro", email: "pin4eva@gmail.com", role: "Admin", online: false },
+  { id: 28, name: "Ifeanyi Gozie", email: "ife@gmail.com", role: "User", online: false },
+  { id: 29, name: "Alinko Dangote ", email: "dangote@gmail.com", role: "Moderator", online: true },
+  { id: 30, name: "Elon Musk", email: "musk@gmail.com", role: "Admin", online: true },
 ];
 
-export default function UserManagement() {
+function UserManagement() {
   const [search, setSearch] = useState("");
 
   const filtered = users.filter((u) =>
@@ -104,3 +114,5 @@ export default function UserManagement() {
     </div>
   );
 }
+
+export default UserManagement;

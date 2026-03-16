@@ -60,5 +60,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-//    i need another section for this dashboard another powerful and modern overview section and make it responsive for all screens devices 
+ 
