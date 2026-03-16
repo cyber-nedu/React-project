@@ -52,12 +52,15 @@ function Analytics() {
 
           <div className="card">
             <CardHeader title="Top Locations" icon={<Globe />} />
-            <Geo name="Nigeria" value="34%" />
-            <Geo name="United States" value="21%" />
+            <Geo name="Nigeria" value="94%" />
+            <Geo name="United States" value="73%" />
             <Geo name="India" value="15%" />
-            <Geo name="UK" value="10%" />
-            <Geo name="Germany" value="7%" />
-          </div>
+            <Geo name="UK" value="30%" />
+            <Geo name="Germany" value="12%" />
+            <Geo name="Canada" value="65%" />
+            <Geo name="China" value="81%" />
+            <Geo name="USA" value="100%" />
+           </div>
 
           <div className="card">
             <CardHeader title="Session Insights" icon={<Clock />} />

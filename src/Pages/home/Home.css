@@ -81,7 +81,6 @@
 
 
 
-/* ===== Form section */
 
 .portal-overlay {
   position: fixed;
@@ -232,7 +231,6 @@
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-/* ====== Form section ends */
 .btn {
     align-items: center;
     gap: 10px;
@@ -252,14 +250,11 @@
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--text-light);
     border: 2px solid var(--text-light);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -267,8 +262,7 @@
 .btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-3px) scale(1.02);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--text-light);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -345,13 +339,6 @@
     }
 }
 
-.hero-icon-large {
-    font-size: 8em;
-    color: var(--primary-color);
-    /* Subtle breathing animation for the icon */
-    animation: breath 4s infinite ease-in-out;
-}
-
 @keyframes breath {
     0% { transform: scale(1); opacity: 0.8; }
     50% { transform: scale(1.05); opacity: 1; }
@@ -363,7 +350,7 @@
 
 .features-section {
     padding: 100px 80px;
-    background-color: var(--bg-light);
+    /* background-color: var(--bg-light); */
 }
 
 .features-grid {
@@ -424,21 +411,17 @@
     margin-bottom: 20px;
 }
 
-.card-link {
-    font-weight: 600;
-    color: var(--primary-color);
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+
+.explore{
+    background: rgb(148, 148, 148);
+    padding: 10px 120px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
 }
 
-.card-link i {
-    font-size: 0.9em;
-    transition: transform var(--transition-speed);
-}
-
-.card-link:hover i {
-    transform: translateX(5px);
+.explore:hover{
+    color: #000;
 }
 
 
@@ -491,7 +474,6 @@
     margin-bottom: 30px;
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Animation: Zoom-in on load */
     opacity: 0;
     transform: scale(0.9);
     animation: zoomIn 1s ease-out forwards;
@@ -531,7 +513,6 @@
 }
 
 
-/* --- Section 4: Call to Action (CTA) --- */
 .cta-section {
     background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 100px 80px;
@@ -546,7 +527,6 @@
 .cta-content {
     max-width: 800px;
     margin: 0 auto;
-    /* Animation: Fade In/Slide Up with a delay */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInSlideUp 1s ease-out forwards;
@@ -581,7 +561,6 @@
     box-shadow: 0 12px 25px rgba(40, 167, 69, 0.5);
 }
 
-/* Subtle CTA Pulse Animation */
 .animated-cta-pulse {
     animation: ctaPulse 2s infinite ease-in-out;
 }
@@ -592,7 +571,6 @@
     100% { transform: scale(1); }
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;

@@ -12,6 +12,8 @@ import BlogPage from './Pages/blog/BlogPage.jsx';
 import Dashboard from './Pages/dashboard/Dashboard.jsx';
 import User from './Pages/user-management/Users.jsx';
 import Analytics from './Pages/analytics/Analytics.jsx';
+import Overview from './Pages/overview/Overview.jsx';
+import ActivityPage from './Pages/activity/Activity.jsx';
 import NotfoundPage from './Pages/not-found/NotfoundPage.jsx';
 import { Routes, Route, Outlet } from 'react-router-dom';
 
@@ -50,11 +52,11 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
         </Route>
 
-        {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/dashboard/activity" element={<ActivityPage />} /> */}
+        <Route path="/dashboard/activity" element={<ActivityPage />} />
         <Route path="/dashboard/user" element={<User />} />
         <Route path="/dashboard/analytics" element={<Analytics />} />
+        <Route path='/dashboard/overview' element={<Overview />} />
 
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
