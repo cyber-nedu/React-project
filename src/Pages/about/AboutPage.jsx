@@ -64,7 +64,7 @@ function AboutPage() {
           </section>
 
           <section className="values-section fade-up">
-            <h2 className="section-title ">The Principles That Guide Us</h2>
+            <h2 className="section-title">The Principles That Guide Us</h2><br /><br />
             <div className="values-grid">
               <div className="value-item">
                 <i className="value-icon">✨</i>
@@ -123,34 +123,6 @@ function AboutPage() {
             </div>
           </section>
 
-          <section className="impact-section fade-up">
-            <div className="guide-impact">
-              <h2>Our Live Impact</h2>
-
-            </div>
-            <div className="impact-grid">
-              <div className="impact-card floating-card">
-                <div className="impact-bg"></div>
-                <h3>{counts.projects}+</h3>
-                <p>Projects Completed</p>
-              </div>
-              <div className="impact-card floating-card">
-                <div className="impact-bg"></div>
-                <h3>{counts.users.toLocaleString()}+</h3>
-                <p>Active Users</p>
-              </div>
-              <div className="impact-card floating-card">
-                <div className="impact-bg"></div>
-                <h3>{counts.satisfaction}%</h3>
-                <p>Client Satisfaction</p>
-              </div>
-              <div className="impact-card floating-card">
-                <div className="impact-bg"></div>
-                <h3>{counts.uptime}/7</h3>
-                <p>System Uptime</p>
-              </div>
-            </div>
-          </section>
 
           <section className="team-section fade-up">
             <div className="guide">

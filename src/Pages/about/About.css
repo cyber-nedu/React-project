@@ -16,6 +16,7 @@
     padding: 150px 0;
     background-image: url(/public/images/team2.png);
     background-position: center;
+    filter: contrast(1.2);
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -24,13 +25,13 @@
 .about-hero-title {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #007bff;
+    color: rgba(255, 255, 255, 0.849);
     margin-bottom: 15px;
 }
 
 .about-hero-subtitle {
     font-size: 1.5rem;
-    color: #555;
+    color: rgb(184, 184, 184);
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.5;
@@ -77,8 +78,9 @@
 }
 
 .values-section {
-    padding: 40px 0;
+    padding: 40px ;
     background-color: #f8f9fa;
+    text-align: center;
 }
 
 .values-grid {
@@ -114,6 +116,7 @@
     gap: 60px;
     padding: 80px 0;
     align-items: center;
+    padding: 40px;
 }
 
 .story-content {
@@ -164,7 +167,6 @@
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
-
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
@@ -172,6 +174,7 @@
 }
 
 .cta-button.primary {
+    width: 20%;
     background-color: #007bff;
     color: white;
 
@@ -239,8 +242,8 @@
     transform: translateY(0);
 }
 
-.services-section, .impact-section, .team-section {
-    padding: 80px 0;
+.services-section,   .team-section {
+    padding: 40px;
 }
 
 .value-item{
@@ -263,10 +266,8 @@
 .impact-section {
     font-size: 2rem;
     color: #007bff;
-}
+        margin-bottom: 20px;
 
-.impact-section{
-    margin-bottom: 20px;
 }
 
 .impact-card {
@@ -279,18 +280,13 @@
 }
 
 .impact-section {
-  padding: 80px 0;
-  position: relative;
+  padding: 80px;
   z-index: 1;
   background: linear-gradient(135deg, #0d1b2a, #1b263b);
   border-radius: 20px; 
-
+  width: 80%;
 }
 
-.impact-section  {
-  color: #00aaff; 
-  margin-bottom: 50px;
-}
 
 .impact-grid {
   display: grid;
